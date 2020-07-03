@@ -1,0 +1,111 @@
+class Employee:
+      emplist = []
+      def __init__(self):
+            self.id = 0
+            self.name = 0
+            self.age = 0
+            self.mobno = 0
+            self.designation = 0
+      def addcustomer(self):
+            Employee.emplist.append(self)
+      def searchcustomer(self):
+            for e in Employee.emplist:
+                  if(e.id == self.id)
+                        return e
+      def deleteemployee(self):
+            for e in Employee.emplist:
+                  if(e.id == self.id)
+                        Employee.emplist.remove(e)
+                        return
+class Manager:
+      def __init__(self):
+            self.area = 0
+            super().__init__()
+class Director:
+      def __init__(self):
+            self.share = 0
+            super().__init__()
+class Trainer:
+      def __init__(self):
+            self.course = 0
+            super().__init__()
+def showcustomer(e)
+      print(f"Emp Id:{e.id}  Emp Name:{e.name}   Emp Age:{e.age}    Emp Mobile no:{e.mobno}   Emp Designation:{e.designation}",end = " ")
+      if(e.designation == "Manager"):
+            print("Emp Area :" ,e.area)
+      elif(e.designation == "Director"):
+            print("Emp Share :" ,e.share)
+      else:
+            print("Emp Course :" ,e.course)
+while(1):
+      print("Welcome  Mani's Employee Resource Planning")
+      print("1 Add Employee   2 Search Employee  3 Delete Employee  4 Modify Employee  5 Display Employee  6 Exit")
+      choice1 = input("Enter your choice from 1 to 6")
+      if(choice1 == "1"):   #Add Employee
+            print("1 for Manager  2 for Director   3 for Trainer")
+            choice2 = input("Enter your choice from 1 to 3")
+            if(choice2 == "1"):    #Add manager
+                  mgr = Manager()
+                  mgr.id = input("Enter your id")
+                  mgr.name = input("Enter your name")
+                  mgr.age = input("Enter your age")
+                  mgr.mobno = input("Enter your mobile no")
+                  mgr.area = input("Enter your area")
+                  mgr.designation = "Manager"
+                  mgr.addcustomer()
+                  print("Customer added successfully")
+            elif(choice2 == "2"):       #Add Director
+                  dir = Director()
+                  dir.id = input("Enter your id")
+                  dir.name = input("Enter your name")
+                  dir.age = input("Enter your age")
+                  dir.mobno = input("Enter your mobile no")
+                  dir.area = input("Enter your area")
+                  dir.designation = "Director"
+                  dir.addcustomer()
+                  print("Customer added successfully")
+            elif(choice2 == "3"):
+                  tr = Trainer()
+                  tr.id = input("Enter your id")
+                  tr.name = input("Enter your name")
+                  tr.age = input("Enter your age")
+                  tr.mobno = input("Enter your mobile no")
+                  tr.area = input("Enter your area")
+                  tr.designation = "Trainer"
+                  tr.addcustomer()
+                  print("Customer added successfully")
+            else:
+                  print("Make choice only between 1 to 3")
+      elif(choice1 == "2"):   #search customer
+            emp = Employee()
+            emp.id = input("Enter your id")
+            e = emp.searchcustomer()
+            showcustomer(e)
+      elif(choice1 == "3"):   #delete customer
+            emp = Employee()
+            emp.id = input("Enter your id")
+            emp.deleteemployee()
+            print("Employee Deleted Successfully")
+      elif(choice1 == "4"):
+            emp = Employee()
+            emp.id = input("Enter your id")
+            e = emp.searchcustomer()
+            e.name = input("Enter updated name")
+            e.age = input("Enter updated age")
+            e.mobno = input("Enter updated mobile no.")
+            if(e.designation == "Manager"):
+                  e.area = input("Enter updated area")
+            elif(e.designation == "Director"):
+                  e.area = input("Enter updated area")
+            else:
+                  e.area = input("Enter updated area")
+      elif(choice1 == "5"):
+            for e in Employee.emplist:
+                  showcustomer(e)
+      elif(choice1 == "6"):
+            break
+      else:
+            print("Wrong choice")
+                  
+            
+      
