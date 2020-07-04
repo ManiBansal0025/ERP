@@ -10,11 +10,11 @@ class Employee:
             Employee.emplist.append(self)
       def searchcustomer(self):
             for e in Employee.emplist:
-                  if(e.id == self.id)
+                  if(e.id == self.id):
                         return e
       def deleteemployee(self):
             for e in Employee.emplist:
-                  if(e.id == self.id)
+                  if(e.id == self.id):
                         Employee.emplist.remove(e)
                         return
 class Manager:
@@ -29,7 +29,7 @@ class Trainer:
       def __init__(self):
             self.course = 0
             super().__init__()
-def showcustomer(e)
+def showcustomer(e):
       print(f"Emp Id:{e.id}  Emp Name:{e.name}   Emp Age:{e.age}    Emp Mobile no:{e.mobno}   Emp Designation:{e.designation}",end = " ")
       if(e.designation == "Manager"):
             print("Emp Area :" ,e.area)
@@ -37,8 +37,8 @@ def showcustomer(e)
             print("Emp Share :" ,e.share)
       else:
             print("Emp Course :" ,e.course)
+print("Welcome  Mani's Employee Resource Planning")
 while(1):
-      print("Welcome  Mani's Employee Resource Planning")
       print("1 Add Employee   2 Search Employee  3 Delete Employee  4 Modify Employee  5 Display Employee  6 Exit")
       choice1 = input("Enter your choice from 1 to 6")
       if(choice1 == "1"):   #Add Employee
@@ -60,7 +60,7 @@ while(1):
                   dir.name = input("Enter your name")
                   dir.age = input("Enter your age")
                   dir.mobno = input("Enter your mobile no")
-                  dir.area = input("Enter your area")
+                  dir.share = input("Enter your share")
                   dir.designation = "Director"
                   dir.addcustomer()
                   print("Customer added successfully")
@@ -70,7 +70,7 @@ while(1):
                   tr.name = input("Enter your name")
                   tr.age = input("Enter your age")
                   tr.mobno = input("Enter your mobile no")
-                  tr.area = input("Enter your area")
+                  tr.course = input("Enter your course")
                   tr.designation = "Trainer"
                   tr.addcustomer()
                   print("Customer added successfully")
@@ -96,9 +96,9 @@ while(1):
             if(e.designation == "Manager"):
                   e.area = input("Enter updated area")
             elif(e.designation == "Director"):
-                  e.area = input("Enter updated area")
+                  e.share = input("Enter updated share")
             else:
-                  e.area = input("Enter updated area")
+                  e.course = input("Enter updated course")
       elif(choice1 == "5"):
             for e in Employee.emplist:
                   showcustomer(e)
